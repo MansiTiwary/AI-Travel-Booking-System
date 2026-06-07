@@ -17,7 +17,8 @@ Planning a trip often requires users to browse multiple platforms for flights, a
 * Recommend a solo travel destination for December.
 
 ---
-
+## ✨ Screenshot - Demo Pictures
+[![Homepage](images/homepage.png)](https://raw.githubusercontent.com/MansiTiwary/AI-Travel-Booking-System/main/images/homepage.png)
 ## ✨ Key Features
 
 ### 🤖 Multi-Agent Architecture
