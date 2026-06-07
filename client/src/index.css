@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #0a0e1a;
+  --card: rgba(17, 24, 40, 0.65);
+  --border: rgba(255, 255, 255, 0.08);
+  --gold: #c9a84c;
+  --gold-lite: #e8c97a;
+  --sky: #4aa8d8;
+  --text: #e8ecf4;
+  --muted: #7a8ba0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Hero ── */
+.hero {
+  text-align: center;
+  padding: 4.5rem 1rem 3rem;
+  background: radial-gradient(ellipse 80% 60% at 50% -10%,
+      rgba(74,168,216,0.25) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 40% at 80% 10%,
+      rgba(201,168,76,0.18) 0%, transparent 60%);
+  position: relative;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.hero h1 em {
+  font-style: italic;
+  background: linear-gradient(135deg, #e8c97a 0%, #c9a84c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #a0aec0;
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── Container ── */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Search Form ── */
+.search-card {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+  margin-top: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+input, textarea, select {
+  width: 100%;
+  background: rgba(13, 20, 34, 0.8);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  padding: 1rem;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--sky);
+  box-shadow: 0 0 0 3px rgba(74,168,216,0.12);
+}
+
+.row {
+  display: flex;
+  gap: 1.5rem;
+}
+.row > div {
+  flex: 1;
+}
+
+button.primary {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--gold) 0%, #a8722a 100%);
+  color: #0a0e1a;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(201, 168, 76, 0.3);
+  transition: all 0.3s ease;
+}
+
+button.primary:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(201, 168, 76, 0.4);
+}
+
+button.primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Progress Tracker ── */
+.progress-tracker {
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem auto;
+  max-width: 600px;
+  position: relative;
+}
+
+.progress-tracker::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--border);
+  z-index: 0;
+}
+
+.step {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--muted);
+  transition: all 0.3s;
+}
+
+.step.active .step-circle {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--bg);
+}
+
+.step.completed .step-circle {
+  background: var(--sky);
+  border-color: var(--sky);
+  color: var(--bg);
+}
+
+.step-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.step.active .step-label {
+  color: var(--gold-lite);
+}
+
+/* ── Results ── */
+.results-container {
+  margin-top: 3rem;
+  animation: fadeIn 0.5s ease;
+}
+
+.status-message {
+  text-align: center;
+  color: var(--sky);
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.result-card {
+  background: linear-gradient(160deg, #111828 0%, #0d1620 100%);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(201,168,76,0.08);
+  margin-bottom: 2rem;
+}
+
+.result-card h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold-lite);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.markdown-body {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  color: var(--gold-lite);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.markdown-body ul, .markdown-body ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-body p {
+  margin-bottom: 1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Footer ── */
+.footer {
+  margin-top: 4rem;
+  padding: 3rem 0 2rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+}
+.footer-inner {
+  display: inline-block;
+  background: rgba(17, 24, 40, 0.4);
+  padding: 1.5rem 3rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+}
+.footer-inner p {
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+.footer-inner strong {
+  color: var(--gold-lite);
+}
+.footer-inner a {
+  color: var(--sky);
+  text-decoration: none;
+}
