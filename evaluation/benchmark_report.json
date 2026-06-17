@@ -1,0 +1,158 @@
+{
+  "results": [
+    {
+      "query": "Plan a 5-day trip to Goa under \u20b930,000",
+      "total_time_sec": 13.342,
+      "node_timings_sec": {
+        "flight_agent": 3.008,
+        "hotel_agent": 3.992,
+        "itinerary_agent": 4.163,
+        "final_agent": 2.18
+      },
+      "llm_calls": 4,
+      "api_status": {
+        "flight_api_success": true,
+        "hotel_api_success": true
+      },
+      "completeness": {
+        "has_flight_section": true,
+        "has_hotel_section": true,
+        "has_day_plan": true,
+        "has_inr_budget": true,
+        "has_tips_section": true,
+        "score": 1.0
+      },
+      "itinerary_chars": 3812
+    },
+    {
+      "query": "Find the cheapest flights from Mumbai to Dubai",
+      "total_time_sec": 7.869,
+      "node_timings_sec": {
+        "flight_agent": 1.323,
+        "hotel_agent": 1.78,
+        "itinerary_agent": 2.595,
+        "final_agent": 2.171
+      },
+      "llm_calls": 4,
+      "api_status": {
+        "flight_api_success": true,
+        "hotel_api_success": true
+      },
+      "completeness": {
+        "has_flight_section": true,
+        "has_hotel_section": true,
+        "has_day_plan": true,
+        "has_inr_budget": true,
+        "has_tips_section": true,
+        "score": 1.0
+      },
+      "itinerary_chars": 3727
+    },
+    {
+      "query": "Suggest hotels near Marina Bay Sands in Singapore",
+      "total_time_sec": 10.757,
+      "node_timings_sec": {
+        "flight_agent": 1.784,
+        "hotel_agent": 2.721,
+        "itinerary_agent": 2.885,
+        "final_agent": 3.367
+      },
+      "llm_calls": 4,
+      "api_status": {
+        "flight_api_success": true,
+        "hotel_api_success": true
+      },
+      "completeness": {
+        "has_flight_section": true,
+        "has_hotel_section": true,
+        "has_day_plan": true,
+        "has_inr_budget": true,
+        "has_tips_section": true,
+        "score": 1.0
+      },
+      "itinerary_chars": 4139
+    },
+    {
+      "query": "Create a 7-day itinerary for Japan",
+      "total_time_sec": 22.238,
+      "node_timings_sec": {
+        "flight_agent": 1.589,
+        "hotel_agent": 1.757,
+        "itinerary_agent": 3.043,
+        "final_agent": 15.849
+      },
+      "llm_calls": 4,
+      "api_status": {
+        "flight_api_success": true,
+        "hotel_api_success": true
+      },
+      "completeness": {
+        "has_flight_section": true,
+        "has_hotel_section": true,
+        "has_day_plan": true,
+        "has_inr_budget": true,
+        "has_tips_section": true,
+        "score": 1.0
+      },
+      "itinerary_chars": 4661
+    },
+    {
+      "query": "Plan a solo trip to Manali for 4 days under \u20b915,000",
+      "total_time_sec": 25.317,
+      "node_timings_sec": {
+        "flight_agent": 1.904,
+        "hotel_agent": 1.91,
+        "itinerary_agent": 8.039,
+        "final_agent": 13.464
+      },
+      "llm_calls": 4,
+      "api_status": {
+        "flight_api_success": true,
+        "hotel_api_success": true
+      },
+      "completeness": {
+        "has_flight_section": true,
+        "has_hotel_section": true,
+        "has_day_plan": true,
+        "has_inr_budget": true,
+        "has_tips_section": true,
+        "score": 1.0
+      },
+      "itinerary_chars": 3668
+    }
+  ],
+  "summary": {
+    "num_queries": 5,
+    "response_time_sec": {
+      "avg": 15.905,
+      "median": 13.342,
+      "p95": 22.238,
+      "min": 7.869,
+      "max": 25.317
+    },
+    "per_node_latency_sec": {
+      "flight_agent": {
+        "avg_sec": 1.922,
+        "p95_sec": 1.904
+      },
+      "hotel_agent": {
+        "avg_sec": 2.432,
+        "p95_sec": 2.721
+      },
+      "itinerary_agent": {
+        "avg_sec": 4.145,
+        "p95_sec": 4.163
+      },
+      "final_agent": {
+        "avg_sec": 7.406,
+        "p95_sec": 13.464
+      }
+    },
+    "api_success_rate_pct": {
+      "flight_api": 100.0,
+      "hotel_api": 100.0
+    },
+    "avg_completeness_score": 1.0,
+    "avg_llm_calls": 4
+  }
+}
